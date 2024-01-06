@@ -74,9 +74,6 @@ pyrsistent
 pystackreg
 python-dateutil
 pytz
-pywin32
-pywin32-ctypes
-pywinpty
 pyzmq
 qtconsole
 QtPy
