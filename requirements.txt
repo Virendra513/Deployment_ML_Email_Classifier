@@ -20,6 +20,7 @@ entrypoints
 executing
 Flask
 fonttools
+gunicorn
 importlib-metadata
 importlib-resources
 ipykernel
