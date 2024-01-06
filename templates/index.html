@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classifier</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Email Spam Classifier </h1>
+    <div>
+        <form method="post" action="/predict">
+            <textarea rows="15" cols="60" name="content" placeholder="Enter Your Email Body" 
+                autocomplete="off">{{ email }}</textarea>
+        
+            <div>
+                <button type="submit">Check Spam</button>
+                <a href="/"> Reset </a>
+            </div>
+    
+
+            <h5>Devploped by Virendra Singh K... </h5>
+        </form>
+
+        {% if prediction==1 %}
+            <h2 style="color:green">This is a not a SPAM... </h2>
+        {% elif prediction==-1 %}
+            <h2 style="color: red">This is a SPAM... </h2>
+        {% endif %}
+    </div>
+    
+</body>
+</html>
